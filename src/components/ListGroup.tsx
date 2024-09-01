@@ -1,14 +1,19 @@
 import { useState } from "react";
+// {items: [],heading: string }
+interface Props {
+  items: string[];
+  heading: string
+}
 
 
-function ListGroup() {
-  const items = ["France", "Mexico", "German", "Sri Lanka", "ENgland"];
+function ListGroup({items, heading}: Props) {
+  
 
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
   return (
     <>
-      <h1>This is a GridList</h1>
+      <h1>{heading}</h1>
       {items.length === 0 && <p>No items found</p>}
       <ul className="list-group">
         {items.map((items, index) => (
